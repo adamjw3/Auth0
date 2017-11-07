@@ -1,0 +1,89 @@
+// =============================================================================
+// Call to Action
+// =============================================================================
+
+// CTA
+// -----------------------------------------------------------------------------
+//
+// Purpose: Always contains a link with optional title & summary
+//
+//
+// 1.
+//
+// -----------------------------------------------------------------------------
+
+.c-cta {
+    @include global-component-margins;
+}
+
+.c-cta__content-container {
+    @include make-col-ready();
+    @include make-col(12);
+
+    @include media-breakpoint-up(md) {
+        @include make-col(10);
+        @include make-col-offset(1);
+    }
+
+    @include media-breakpoint-up(xl) {
+        @include make-col(8);
+        @include make-col-offset(2);
+    }
+}
+
+.c-cta__title-container {
+    @include make-col-ready();
+    @include make-col(12);
+    margin-bottom: $unit-small;
+}
+
+.c-cta__summary-container {
+    @include make-col-ready();
+    @include make-col(12);
+    margin-bottom: $unit-small;
+}
+
+.c-cta__links-container {
+    @include font-size(0);
+    @include make-col-ready();
+    @include make-col(12);
+
+    @include media-breakpoint-up(md) {
+        @include make-col(10);
+        @include make-col-offset(1);
+    }
+
+    @include media-breakpoint-up(xl) {
+        @include make-col(8);
+        @include make-col-offset(2);
+    }
+}
+
+.c-cta__links-item {
+    @include media-breakpoint-up(sm) {
+        display: inline-block;
+    }
+}
+
+.c-cta__links-item + .c-cta__links-item {
+    @include media-breakpoint-down(xs) {
+        margin-top: $unit;
+    }
+
+    @include media-breakpoint-up(sm) {
+        margin-left: $unit;
+    }
+}
+
+
+// CTA Modifiers
+// -----------------------------------------------------------------------------
+//
+// Purpose: Enhances or removes styles from default CTA
+//
+//
+// 1.
+//
+// -----------------------------------------------------------------------------
+
+// 1

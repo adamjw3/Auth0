@@ -1,0 +1,44 @@
+// =============================================================================
+// Global Settings
+// =============================================================================
+
+// Global Spacing
+// -----------------------------------------------------------------------------
+//
+// Purpose: Set spacing units which can then be re-used to keep spacing consistent
+//
+//
+// 1.
+//
+// -----------------------------------------------------------------------------
+
+$global-spacing-unit-xxsmall:                           5px;
+$global-spacing-unit-xsmall:                            10px;
+$global-spacing-unit-small:                             15px;
+$global-spacing-unit:                                   20px;
+$global-spacing-unit-large:                             30px;
+$global-spacing-unit-xlarge:                            40px;
+$global-spacing-unit-xxlarge:                           50px;
+
+
+// Global Component Margins
+// -----------------------------------------------------------------------------
+//
+// Purpose: Setting the component margins globally so it can be easily changed in 1 place
+//
+//
+// 1.
+//
+// -----------------------------------------------------------------------------
+
+@mixin global-component-margins() {
+    display: inline-block;
+    margin-bottom: $global-spacing-unit;
+    margin-top: $global-spacing-unit;
+    width: 100%;
+
+    @include media-breakpoint-up(md) {
+        margin-bottom: $global-spacing-unit-large;
+        margin-top: $global-spacing-unit-large;
+    }
+}

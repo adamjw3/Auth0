@@ -1,0 +1,102 @@
+// =============================================================================
+// CMS
+// =============================================================================
+
+// CMS Content
+// -----------------------------------------------------------------------------
+//
+// Purpose: Used wherever editable CMS content is required - keeps the spacing nice & consistent :)
+//
+//
+// 1. Remove the top margin of the first element
+// 2. Re-use paragraph styling mainly for font size
+// 3. Override inline margin on tweet embed
+// 4. Set tweet embed width to 100% so it doesn't force content to grow to it's width
+// 5. Add margin to the top of wrapper that gets added to youtube/vimeo videos
+//
+// -----------------------------------------------------------------------------
+
+.cms-content {
+    // 1
+    :first-child {
+        margin-top: 0;
+    }
+
+    h1 {
+        @include heading-large;
+    }
+
+    h2 {
+        @include heading;
+    }
+
+    h3,
+    h4,
+    h5,
+    h6 {
+        @include heading-small;
+    }
+
+    h2, h3 {
+        margin-bottom: -15px;
+        margin-top: 30px;
+    }
+
+    h4, h5, h6 {
+        margin-bottom: -10px;
+        margin-top: 20px;
+    }
+
+    p, ul, ol {
+        margin-top: 20px;
+    }
+
+    ul, ol {
+        // 2
+        @include para;
+
+        li {
+            margin-left: 20px;
+        }
+    }
+
+    ul {
+        list-style-type: disc;
+    }
+
+    ol {
+        list-style-type: decimal;
+    }
+
+    img {
+        height: auto !important;
+        margin-top: $unit;
+        max-width: 100% !important;
+    }
+
+    img[style*="float: left"] {
+        margin: $unit $unit $unit 0;
+    }
+
+    img[style*="float: right"] {
+        margin: $unit 0 $unit $unit;
+    }
+
+    strong {
+        font-weight: bold;
+    }
+
+    em {
+        font-style: italic;
+    }
+
+    .twitter-tweet {
+        margin: $unit-large 0!important; // 3
+        width: 100%!important; // 4
+    }
+
+    // 5
+    .fluid-width-video-wrapper {
+        margin-top: $unit;
+    }
+}

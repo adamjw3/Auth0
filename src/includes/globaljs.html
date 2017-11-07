@@ -1,0 +1,21 @@
+<script type="text/javascript">
+    $LAB.setGlobalDefaults({Debug:true, AllowDuplicates:false})
+    .script("//ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js").wait(function() {
+        window.lazySizesConfig = window.lazySizesConfig || {};
+        lazySizesConfig.loadMode = 1;
+        lazySizesConfig.expand = 0;
+    })
+    .script("https://cdn.auth0.com/js/auth0/8.10.1/auth0.min.js")
+    .script("/resources/js/plugins/ls.bgset.min.js")
+    .script("/resources/js/plugins/lazysizes.min.js")
+    .script("/resources/js/plugins/picturefill.min.js")
+    .script("/resources/js/plugins/jquery.validate.min.js")
+    .script("/resources/js/plugins/jquery.validate.webforms.min.js")
+    .script("/resources/js/plugins/selection-sharer.min.js")
+    .script("/resources/js/plugins/selection-sharer.min.js")
+    .script("/resources/js/plugins/jquery.fitvid.min.js").wait()
+    .script("/resources/js/global.min.js").wait(function() {
+        BEGlobal.Init();
+        FEGlobal.Init();
+    });
+</script>

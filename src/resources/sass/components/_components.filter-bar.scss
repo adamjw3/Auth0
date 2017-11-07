@@ -1,0 +1,109 @@
+// =============================================================================
+// Filter Bar
+// =============================================================================
+
+// Filter Bar
+// -----------------------------------------------------------------------------
+//
+// Purpose:
+//
+//
+// 1.
+//
+// -----------------------------------------------------------------------------
+
+.c-filter-bar {
+    padding-bottom: $unit;
+    padding-top: $unit;
+}
+
+.c-filter-bar__toggle-btn-container {
+    @include make-col-ready();
+    @include make-col(12);
+
+    .no-js & {
+        display: none;
+    }
+
+    @include media-breakpoint-up(md) {
+        display: none;
+    }
+}
+
+.c-filter-bar__filters-container {
+    @include make-col-ready();
+    @include make-col(12);
+
+    @include media-breakpoint-down(sm) {
+        .js & {
+            display: none;
+
+            &.is-active {
+                display: block;
+            }
+        }
+    }
+}
+
+.c-filter-bar__title-container {
+    @include make-col-ready();
+    @include make-col(12);
+
+    @include media-breakpoint-down(sm) {
+        margin-top: $unit;
+    }
+
+    @include media-breakpoint-up(md) {
+        margin-bottom: $unit-xsmall;
+    }
+
+    @include media-breakpoint-up(lg) {
+        @include make-col(1.5);
+        align-items: center;
+        display: flex;
+        margin-bottom: 0;
+    }
+}
+
+.c-filter-bar__title {
+    width: 100%;
+}
+
+.c-filter-bar__option-container {
+    @include make-col-ready();
+    @include make-col(12);
+
+    @include media-breakpoint-up(lg) {
+        @include make-col(10.5);
+    }
+}
+
+.c-filter-bar__option {
+    @include make-col-ready();
+    @include make-col(12);
+
+    @include media-breakpoint-down(sm) {
+        margin-top: $unit-small;
+    }
+
+    @include media-breakpoint-up(md) {
+        @include make-col(3);
+    }
+}
+
+.c-filter-bar__option-selectbox {
+    width: 100%;
+}
+
+.c-filter-bar__submit-container {
+    @include make-col-ready();
+    @include make-col(12);
+
+    @include media-breakpoint-down(sm) {
+        margin-top: $unit-small;
+    }
+
+    @include media-breakpoint-up(md) {
+        @include make-col(3);
+    }
+}

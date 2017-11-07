@@ -1,0 +1,32 @@
+<section class="c-cta {{class}}">
+    <div class="container">
+        <div class="row">
+            <div class="c-cta__content-container">
+                <div class="row">
+                    <!--(bake-start _if="title")-->
+                    <div class="c-cta__title-container">
+                        <h2 class="c-cta__title heading">{{title}}</h2>
+                    </div>
+                    <!--(bake-end)-->
+                    <!--(bake-start _if="description")-->
+                    <div class="c-cta__summary-container cms-content">
+                        <p class="c-cta__summary">{{description}}</p>
+                    </div>
+                    <!--(bake-end)-->
+                </div>
+            </div>
+            <div class="c-cta__links-container">
+                <!--(bake-start _if="link1")-->
+                <div class="c-cta__links-item">
+                    <a href="" class="c-btn">{{link1}}</a>
+                </div>
+                <!--(bake-end)-->
+                <!--(bake-start _if="link2")-->
+                <div class="c-cta__links-item">
+                    <a href="" class="c-btn">{{link2}}</a>
+                </div>
+                <!--(bake-end)-->
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,29 @@
+// =============================================================================
+// Video
+// =============================================================================
+
+// Video
+// -----------------------------------------------------------------------------
+//
+// Purpose: Makes 16:9 iframe videos responsive
+//
+//
+// 1. Creates placeholder container for video with aspect ratio of 16:9
+// 2. Makes the video iframe fit the container so it scales with the browser width
+//
+// -----------------------------------------------------------------------------
+
+.c-video {
+    padding-top: 56.25%;
+    position: relative;
+    width: 100%;
+
+    // 2
+    iframe {
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+}

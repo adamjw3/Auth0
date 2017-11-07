@@ -1,0 +1,71 @@
+// =============================================================================
+// Author
+// =============================================================================
+
+// Author
+// -----------------------------------------------------------------------------
+//
+// Purpose: Article Author info
+//
+//
+// 1.
+//
+// -----------------------------------------------------------------------------
+
+.c-author {
+    @include global-component-margins;
+}
+
+.c-author__wrapper {
+    @include make-col-ready();
+    @include make-col(12);
+
+    @include media-breakpoint-up(md) {
+        @include make-col(10);
+        @include make-col-offset(1);
+    }
+
+    @include media-breakpoint-up(xl) {
+        @include make-col(8);
+        @include make-col-offset(2);
+    }
+}
+
+.c-author__image-container {
+    @include make-col-ready();
+    @include make-col(5);
+
+    @include media-breakpoint-up(sm) {
+        @include make-col(4);
+    }
+
+    @include media-breakpoint-up(md) {
+        @include make-col(3);
+    }
+
+    @include media-breakpoint-up(lg) {
+        @include make-col(2.5);
+    }
+}
+
+.c-author__image {
+    border-radius: 100%;
+    width: 100%;
+}
+
+.c-author__content-container {
+    @include make-col-ready();
+    @include make-col(7);
+
+    @include media-breakpoint-up(sm) {
+        @include make-col(8);
+    }
+
+    @include media-breakpoint-up(md) {
+        @include make-col(7);
+    }
+}
+
+.c-author__name {
+    margin-bottom: $unit-xsmall;
+}

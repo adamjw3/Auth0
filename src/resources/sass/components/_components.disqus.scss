@@ -1,0 +1,37 @@
+// =============================================================================
+// Disqus
+// =============================================================================
+
+// Disqus
+// -----------------------------------------------------------------------------
+//
+// Purpose: Layout styles for disqus comments
+//
+//
+// 1.
+//
+// -----------------------------------------------------------------------------
+
+.c-disqus {
+    @include global-component-margins;
+}
+
+.c-disqus__comments {
+    @include make-col-ready();
+    @include make-col(12);
+
+    @include media-breakpoint-up(sm) {
+        @include make-col(11);
+        @include make-col-offset(0.5);
+    }
+
+    @include media-breakpoint-up(xl) {
+        @include make-col(8);
+        @include make-col-offset(2);
+    }
+
+    @include media-breakpoint-up(xxl) {
+        @include make-col(7);
+        @include make-col-offset(2.5);
+    }
+}

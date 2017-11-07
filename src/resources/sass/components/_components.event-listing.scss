@@ -1,0 +1,45 @@
+// =============================================================================
+// Event Listing
+// =============================================================================
+
+// Event Listing
+// -----------------------------------------------------------------------------
+//
+// Purpose: A list of events
+//
+//
+// 1.
+//
+// -----------------------------------------------------------------------------
+
+.c-event-listing {
+    @include global-component-margins;
+}
+
+.c-event-listing__item {
+    @include make-col-ready();
+    @include make-col(12);
+    margin-bottom: $unit-large;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+
+    @include media-breakpoint-up(md) {
+        @include make-col(4);
+        margin-bottom: $unit-xlarge;
+    }
+}
+
+.c-event-listing__item-title {
+    margin-bottom: $unit-small;
+}
+
+.c-event-listing__item-title-link {
+
+}
+
+.c-event-listing__item-date {
+    @include para;
+    margin-bottom: $unit-small;
+}

@@ -1,0 +1,55 @@
+// =============================================================================
+// Blockquote
+// =============================================================================
+
+// Blockquote
+// -----------------------------------------------------------------------------
+//
+// Purpose: Quote with optional author
+//
+//
+// 1.
+//
+// -----------------------------------------------------------------------------
+
+.c-blockquote {
+    @include global-component-margins;
+}
+
+.c-blockquote__content-container {
+    @include make-col-ready();
+    @include make-col(12);
+
+    @include media-breakpoint-up(md) {
+        @include make-col(10);
+        @include make-col-offset(1);
+    }
+
+    @include media-breakpoint-up(xl) {
+        @include make-col(8);
+        @include make-col-offset(2);
+    }
+}
+
+.c-blockquote__quote {
+    margin-bottom: $unit-small;
+
+    @include media-breakpoint-up(md) {
+        margin-bottom: $unit;
+    }
+}
+
+.c-blockquote__author {
+
+}
+
+
+// Blockquote Modifiers
+// -----------------------------------------------------------------------------
+//
+// Purpose: Enhances or removes styles from default blockquote
+//
+//
+// 1.
+//
+// -----------------------------------------------------------------------------

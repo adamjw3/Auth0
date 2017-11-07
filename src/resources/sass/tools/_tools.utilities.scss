@@ -1,0 +1,270 @@
+﻿// =============================================================================
+// Useful Utilities
+// =============================================================================
+
+// REM Font Size
+// -----------------------------------------------------------------------------
+//
+// Purpose: REM Font size with pixel fallback
+//
+//
+// 1.
+//
+// -----------------------------------------------------------------------------
+
+@mixin font-size($sizeValue) {
+    font-size: ($sizeValue * 10) + px;
+    font-size: $sizeValue + rem;
+}
+
+
+// Bootstrap Container & Row
+// -----------------------------------------------------------------------------
+//
+// Purpose: If we disable the bootstrap grid classes then we need to re-add in the container & row styling
+//
+//
+// 1. Container with max width (this is based on the bootstrap settings)
+// 2. Container with no max width
+// 3. Row
+//
+// -----------------------------------------------------------------------------
+
+// 1
+.container {
+    @include make-container();
+    @include make-container-max-widths();
+}
+
+// 2
+.container-fluid {
+    @include make-container();
+}
+
+// 3
+.row {
+    @include make-row();
+}
+
+
+// CSS Triangles
+// -----------------------------------------------------------------------------
+//
+// Purpose: Rather than using images we can show triangles in pure css
+//
+//
+// 1.
+//
+// -----------------------------------------------------------------------------
+
+@mixin triangle-right($color, $height, $width) {
+    border-color: transparent transparent transparent $color;
+    border-style: solid;
+    border-width: ($height/2) 0 ($height/2) ($width);
+    height: 0;
+    -moz-transform: scaleY(.9999);
+    -moz-transform-origin: top;
+    width: 0;
+}
+
+@mixin triangle-left($color, $height, $width) {
+    border-color: transparent $color transparent transparent;
+    border-style: solid;
+    border-width: ($height/2) ($width) ($height/2) 0;
+    height: 0;
+    -moz-transform: scaleY(.9999);
+    -moz-transform-origin: top;
+    width: 0;
+}
+
+@mixin triangle-top($color, $height, $width) {
+    border-color: transparent transparent $color transparent;
+    border-style: solid;
+    border-width: 0 ($width/2) $height ($width/2);
+    height: 0;
+    -moz-transform: scaleY(.9999);
+    -moz-transform-origin: top;
+    width: 0;
+}
+
+@mixin triangle-bottom($color, $height, $width) {
+    border-color: $color transparent transparent transparent;
+    border-style: solid;
+    border-width: $height ($width/2) 0 ($width/2);
+    height: 0;
+    -moz-transform: scaleY(.9999);
+    -moz-transform-origin: top;
+    width: 0;
+}
+
+@mixin triangle-top-left($color, $height, $width) {
+    border-left: $width solid $color;
+    border-bottom: $height solid transparent;
+    height: 0;
+    width: 0;
+    -moz-transform: scaleY(.9999);
+    -moz-transform-origin: top;
+}
+
+@mixin triangle-top-right($color, $height, $width) {
+    border-right: $width solid $color;
+    border-bottom: $height solid transparent;
+    height: 0;
+    width: 0;
+    -moz-transform: scaleY(.9999);
+    -moz-transform-origin: top;
+}
+
+@mixin triangle-bottom-left($color, $height, $width) {
+    border-right: none;
+    border-left: $width solid $color;
+    border-top: $height solid transparent;
+    height: 0;
+    width: 0;
+    -moz-transform: scaleY(.9999);
+    -moz-transform-origin: top;
+}
+
+@mixin triangle-bottom-right($color, $height, $width) {
+    border-left: none;
+    border-right: $width solid $color;
+    border-top: $height solid transparent;
+    height: 0;
+    width: 0;
+    -moz-transform: scaleY(.9999);
+    -moz-transform-origin: top;
+}
+
+
+// Clearfix
+// -----------------------------------------------------------------------------
+//
+// Purpose: Ensures an element is properly cleared
+//
+//
+// 1.
+//
+// -----------------------------------------------------------------------------
+
+@mixin clearfix() {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+.u-clearfix {
+    @include clearfix;
+}
+
+
+// Centering
+// -----------------------------------------------------------------------------
+//
+// Purpose: Center an element
+//
+//
+// 1. Vertical
+// 2. Horizontal
+//
+// -----------------------------------------------------------------------------
+
+// 1
+@mixin vertical-center($position: relative) {
+    position: $position;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+// 2
+@mixin horizontal-center($position: relative) {
+    left: 50%;
+    position: $position;
+    transform: translateX(-50%);
+}
+
+
+// Alignment
+// -----------------------------------------------------------------------------
+//
+// Purpose: Useful mixins for text alignment
+//
+//
+// 1.
+//
+// -----------------------------------------------------------------------------
+
+@mixin text-left           { text-align: left; }
+@mixin text-right          { text-align: right; }
+@mixin text-center         { text-align: center; }
+@mixin text-justify        { text-align: justify; }
+
+
+// Transformations
+// -----------------------------------------------------------------------------
+//
+// Purpose: Useful mixins for text transforming, e.g. uppercase
+//
+//
+// 1.
+//
+// -----------------------------------------------------------------------------
+
+@mixin text-lowercase      { text-transform: lowercase; }
+@mixin text-uppercase      { text-transform: uppercase; }
+@mixin text-capitalize     { text-transform: capitalize; }
+
+
+// Hiding
+// -----------------------------------------------------------------------------
+//
+// Purpose: Useful mixins for hiding text & elements visually, but not from the DOM
+//
+//
+// 1.
+//
+// -----------------------------------------------------------------------------
+
+@mixin text-hide() {
+    display: block;
+    overflow: hidden;
+    text-indent: -9000px;
+}
+
+.u-text-hide {
+    @include text-hide;
+}
+
+@mixin visually-hide() {
+    clip: rect(0 0 0 0);
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.u-visually-hide {
+    @include visually-hide;
+}
+
+
+// Hocus
+// -----------------------------------------------------------------------------
+//
+// Purpose: Generate ':hover' and ':focus' styles in one go
+//
+//
+// 1.
+//
+// -----------------------------------------------------------------------------
+
+@mixin hocus() {
+    &:hover,
+    &:focus {
+        @content;
+    }
+}

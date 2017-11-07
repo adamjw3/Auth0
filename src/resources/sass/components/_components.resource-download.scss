@@ -1,0 +1,110 @@
+// =============================================================================
+// Resource Download
+// =============================================================================
+
+// Resource Download
+// -----------------------------------------------------------------------------
+//
+// Purpose: A resource article download page that has two states, Form and download
+//
+// 1.
+//
+// -----------------------------------------------------------------------------
+
+.c-resource-download {
+    @include global-component-margins;
+}
+
+.c-resource-download__content {
+    width: 100%;
+}
+
+.c-resource-download__header-container {
+    @include make-col-ready();
+    @include make-col(12);
+
+    @include media-breakpoint-up(md) {
+        @include make-col(10);
+        @include make-col-offset(1);
+    }
+
+    @include media-breakpoint-up(xl) {
+        @include make-col(8);
+        @include make-col-offset(2);
+    }
+}
+
+.c-resource-download__content-container {
+    @include make-col-ready();
+    @include make-col(12);
+
+    @include media-breakpoint-up(md) {
+        @include make-col(10);
+        @include make-col-offset(1);
+    }
+
+    @include media-breakpoint-up(xl) {
+        @include make-col(8);
+        @include make-col-offset(2);
+    }
+}
+
+.c-resource-download__title {
+    margin-bottom: $unit-small;
+}
+
+.c-resource-download__meta {
+}
+
+.c-resource-download__meta-item {
+    display: inline-block;
+    margin-bottom: $unit-small;
+}
+
+.c-resource-download__meta-value {
+    @include para;
+    display: block;
+}
+
+.c-resource-download__action-container {
+    @include make-col-ready();
+    @include make-col(12);
+    margin-top: $unit;
+
+    @include media-breakpoint-up(md) {
+        @include make-col(10);
+        @include make-col-offset(1);
+        margin-top: $unit-large;
+    }
+
+    @include media-breakpoint-up(xl) {
+        @include make-col(8);
+        @include make-col-offset(2);
+    }
+}
+
+.c-resource-download__form-container {
+    @include make-col-ready();
+    @include make-col(12);
+    margin-top: $unit;
+
+    @include media-breakpoint-up(md) {
+        @include make-col(10);
+        @include make-col-offset(1);
+        margin-top: $unit-large;
+    }
+
+    @include media-breakpoint-up(xl) {
+        @include make-col(8);
+        @include make-col-offset(2);
+    }
+}
+
+.c-resource-download__form-field {
+    margin-top: $unit;
+    width: 100%;
+
+    @include media-breakpoint-up(md) {
+        width: 50%;
+    }
+}

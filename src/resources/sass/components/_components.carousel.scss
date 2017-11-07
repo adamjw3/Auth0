@@ -1,0 +1,139 @@
+// =============================================================================
+// Carousel
+// =============================================================================
+
+// Carousel
+// -----------------------------------------------------------------------------
+//
+// Purpose: Carousel using slickJS plugin
+//
+//
+// 1. Setting an overflow here to stop the slides from stacking before the carousel has initialised
+// 2. Dots pagination markup is generated bu the JS plugin so don't have as much control over the class names
+//
+// -----------------------------------------------------------------------------
+
+.c-carousel {
+    @include global-component-margins;
+}
+
+.c-carousel__wrapper {
+    @include make-col-ready();
+    @include make-col(12);
+}
+
+// 1
+.c-carousel__slides {
+    height: 350px;
+    overflow: hidden;
+
+    @include media-breakpoint-up(md) {
+        height: 400px;
+    }
+
+    @include media-breakpoint-up(xl) {
+        height: 450px;
+    }
+}
+
+.c-carousel__slide {
+    background-color: $color-carousel-slide-bg;
+    background-position: center center;
+    background-size: cover;
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.c-carousel__slide-content {
+    background-color: rgba(0,0,0,0.5);
+    bottom: $unit-large;
+    left: $unit-large;
+    right: $unit-large;
+    padding: $unit-large;
+    position: absolute;
+}
+
+.c-carousel__slide-title {
+    color: $color-white;
+}
+
+.c-carousel__slide-summary {
+    color: $color-white;
+    margin-top: $unit-small;
+    width: 90%;
+
+    @include media-breakpoint-up(sm) {
+        width: 100%;
+    }
+
+    @include media-breakpoint-up(md) {
+        width: 65%;
+    }
+
+    @include media-breakpoint-up(lg) {
+        width: 45%;
+    }
+}
+
+.c-carousel__slide-link {
+    margin-top: $unit;
+}
+
+.c-carousel__prev, .c-carousel__next {
+    @include font-size(3);
+    color: $color-brand-secondary;
+    cursor: pointer;
+    position: absolute;
+    top: $unit;
+}
+
+.c-carousel__prev {
+    right: 70px;
+}
+
+.c-carousel__next {
+    right: $unit-large;
+}
+
+// 2
+.c-carousel__dots {
+    @include text-center;
+    margin-top: $unit-large;
+
+    li {
+        cursor: pointer;
+        display: inline-block;
+        margin: 0 $unit-xsmall;
+
+        &::before {
+            background-color: $color-carousel-dots-bg;
+            border-radius: 50%;
+            content: "";
+            cursor: pointer;
+            display: inline-block;
+            height: $unit;
+            width: $unit;
+        }
+    }
+
+    button {
+        @include visually-hide;
+    }
+}
+
+
+// Carousel Modifiers
+// -----------------------------------------------------------------------------
+//
+// Purpose: Enhances or removes styles from default carousel
+//
+//
+// 1. Dots pagination active state
+//
+// -----------------------------------------------------------------------------
+
+// 1
+.c-carousel__dots li.slick-active::before {
+    background-color: $color-carousel-dots-active-bg;
+}

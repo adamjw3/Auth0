@@ -1,0 +1,93 @@
+// =============================================================================
+// App Offline
+// =============================================================================
+
+// App Offline
+// -----------------------------------------------------------------------------
+//
+// Purpose: A single HTML file is used as a placeholder when deploying sites so the following CSS will be embedded in the page
+//
+//
+// 1. Reset everything
+//
+// -----------------------------------------------------------------------------
+
+@import "generic/generic.reset"; // 1
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html, body {
+    background: #ffffff;
+    font-family: arial;
+    height: 100%;
+    overflow: hidden;
+}
+
+.table {
+    display: table;
+    height: 100%;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.table-cell {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.content {
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+}
+
+.content:after {
+    content: "";
+    background-color: #000000;
+    bottom: 0;
+    height: 2px;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    width: 168px;
+}
+
+h1 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+img {
+    margin: 0 auto 15px auto;
+    display: block;
+    width: 150px;
+}
+
+@media (min-width: 768px) {
+    .content {
+        margin: 0 auto;
+        width: 700px;
+    }
+
+    h1 {
+        font-size: 48px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}

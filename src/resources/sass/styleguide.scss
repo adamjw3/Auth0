@@ -1,0 +1,450 @@
+// =============================================================================
+// Styleguide
+// =============================================================================
+
+@import "settings/all";
+@import "../bootstrap/bootstrap-grid";
+@import "tools/all";
+@import "generic/generic.reset";
+@import "elements/elements.headingspara";
+@import "elements/elements.cms";
+@import "elements/elements.links";
+@import "elements/elements.page";
+@import "components/components.buttons";
+
+body {
+    background-color: #f4f5f8;
+
+    @include media-breakpoint-up(md) {
+        margin-top: $unit-xlarge;
+    }
+}
+
+// Styleguide Columns
+// -----------------------------------------------------------------------------
+//
+// Purpose: Any styleguide bootstrap columns
+//
+//
+// 1. 50% width of container
+//
+// -----------------------------------------------------------------------------
+
+.style-col {
+    @include make-col-ready();
+    @include make-col(12);
+
+    @include media-breakpoint-up(md) {
+        @include make-col(10);
+    }
+
+    &--center {
+        @include text-center;
+    }
+
+    // 1
+    &--half {
+        @include make-col-ready();
+        @include make-col(12);
+
+        @include media-breakpoint-up(md) {
+            @include make-col(6);
+        }
+    }
+}
+
+
+// Styleguide Colours
+// -----------------------------------------------------------------------------
+//
+// Purpose: All the colours used in the styleguide
+//
+//
+// 1.
+//
+// -----------------------------------------------------------------------------
+
+.style-color-container {
+    @include make-col-ready();
+    @include make-col(6);
+    margin-bottom: 20px;
+
+    @include media-breakpoint-up(sm) {
+        @include make-col(6);
+    }
+
+    @include media-breakpoint-up(md) {
+        @include make-col(4);
+    }
+
+    @include media-breakpoint-up(lg) {
+        @include make-col(3);
+    }
+
+    @include media-breakpoint-up(xl) {
+        @include make-col(2.5);
+    }
+
+    @include media-breakpoint-up(xxl) {
+        @include make-col(2);
+    }
+}
+
+.style-color {
+    @include text-center;
+    border-radius: 5px;
+    height: 225px;
+    position: relative;
+    width: 100%;
+
+    p {
+        @include font-size(1.4);
+        background-color: #fff;
+        bottom: 0;
+        height: 75px;
+        padding: 10px;
+        position: absolute;
+        width: 100%;
+
+        &::after {
+            content: "";
+            display: inline-block;
+            margin-top: 10px;
+            width: 100%;
+        }
+    }
+
+    + .style-color {
+        margin-left: 20px;
+    }
+
+    &--primary {
+        background-color: $color-brand-primary;
+
+        p {
+            &::after {
+                content: "" + $color-brand-primary;
+            }
+        }
+    }
+
+    &--secondary {
+        background-color: $color-brand-secondary;
+
+        p {
+            &::after {
+                content: "" + $color-brand-secondary;
+            }
+        }
+    }
+
+    &--grey {
+        background-color: $color-grey;
+
+        p {
+            &::after {
+                content: "" + $color-grey;
+            }
+        }
+    }
+
+    &--validation-error {
+        background-color: $color-validation-error;
+
+        p {
+            &::after {
+                content: "" + $color-validation-error;
+            }
+        }
+    }
+
+    &--validation-success {
+        background-color: $color-validation-success;
+
+        p {
+            &::after {
+                content: "" + $color-validation-success;
+            }
+        }
+    }
+}
+
+
+// Styleguide Type
+// -----------------------------------------------------------------------------
+//
+// Purpose: Type settings e.g. font, letter spacing, line height
+//
+//
+// 1.
+//
+// -----------------------------------------------------------------------------
+
+.style-type {
+    @include font-size(1.2);
+    background-color: #fff;
+    float: left;
+    margin-top: 10px;
+    padding: 5px;
+
+    &::before {
+        content: " - ";
+    }
+}
+
+
+// Styleguide Form
+// -----------------------------------------------------------------------------
+//
+// Purpose: Styleguide form layout
+//
+//
+// 1.
+//
+// -----------------------------------------------------------------------------
+
+.styleguide-form {
+    @include make-col-ready();
+    @include make-col(12);
+
+    @include media-breakpoint-up(md) {
+        @include make-col(6);
+    }
+
+    &__validation {
+        @include make-col-ready();
+        @include make-col(12);
+        margin-bottom: $unit;
+    }
+
+    &__form-field {
+        @include make-col-ready();
+        @include make-col(12);
+        margin-bottom: $unit;
+    }
+}
+
+
+// Styleguide Spacing
+// -----------------------------------------------------------------------------
+//
+// Purpose: All the colours used in the styleguide
+//
+//
+// 1.
+//
+// -----------------------------------------------------------------------------
+
+.style-spacing {
+    @include text-center;
+    background-color: $color-page-text;
+    display: inline-block;
+    margin: $unit-small $unit $unit-small 0;
+    height: 50px;
+    vertical-align: middle;
+
+    &--unit-xxsmall {
+        width: $unit-xxsmall;
+    }
+
+    &--unit-xsmall {
+        width: $unit-xsmall;
+    }
+
+    &--unit-small {
+        width: $unit-small;
+    }
+
+    &--unit {
+        width: $unit;
+    }
+
+    &--unit-large {
+        width: $unit-large;
+    }
+
+    &--unit-xlarge {
+        width: $unit-xlarge;
+    }
+
+    &--unit-xxlarge {
+        width: $unit-xxlarge;
+    }
+
+    &-text {
+        @include font-size(1.0);
+        background-color: #fff;
+        display: inline-block;
+        padding: 5px;
+        vertical-align: middle;
+
+        &--unit-xxsmall {
+            &::after {
+                content: ": " + $unit-xxsmall;
+            }
+        }
+
+        &--unit-xsmall {
+            &::after {
+                content: ": " + $unit-xsmall;
+            }
+        }
+
+        &--unit-small {
+            &::after {
+                content: ": " + $unit-small;
+            }
+        }
+
+        &--unit {
+            &::after {
+                content: ": " + $unit;
+            }
+        }
+
+        &--unit-large {
+            &::after {
+                content: ": " + $unit-large;
+            }
+        }
+
+        &--unit-xlarge {
+            &::after {
+                content: ": " + $unit-xlarge;
+            }
+        }
+
+        &--unit-xxlarge {
+            &::after {
+                content: ": " + $unit-xxlarge;
+            }
+        }
+    }
+}
+
+
+// Styleguide Index
+// -----------------------------------------------------------------------------
+//
+// Purpose: Used to style up the index page
+//
+//
+// 1.
+//
+// -----------------------------------------------------------------------------
+
+.style-title {
+    @include make-col-ready();
+    @include make-col(12);
+    margin-top: $unit-small;
+
+    @include media-breakpoint-up(md) {
+        @include make-col(8.5);
+        margin-top: $unit-xlarge;
+    }
+
+    @include media-breakpoint-up(lg) {
+        @include make-col(8);
+    }
+
+    @include media-breakpoint-up(xl) {
+        @include make-col(7);
+    }
+}
+
+.style-logo {
+    @include media-breakpoint-down(sm) {
+        display: none;
+    }
+
+    @include media-breakpoint-up(md) {
+        @include make-col(3.5);
+        background-color: #fff;
+        margin-top: $unit-large;
+        padding: 60px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        @include make-col(4);
+    }
+
+    @include media-breakpoint-up(xl) {
+        @include make-col(4);
+        @include make-col-offset(1);
+        margin-top: $unit;
+        padding: 70px;
+    }
+
+    img {
+        width: 100%;
+    }
+}
+
+.style-section {
+    @include make-col-ready();
+    @include make-col(6);
+    margin-top: $unit;
+
+    @include media-breakpoint-up(md) {
+        @include make-col(4);
+        margin-top: $unit-xxlarge;
+    }
+
+    @include media-breakpoint-up(lg) {
+        @include make-col(3);
+    }
+
+    &:first-of-type {
+        @include media-breakpoint-down(sm) {
+            @include make-col(12);
+        }
+    }
+
+    &:not(:first-of-type) {
+        @include media-breakpoint-up(lg) {
+            @include make-col-offset(1);
+        }
+    }
+
+    h2 {
+        text-decoration: underline;
+    }
+
+    p {
+        margin: $unit-small 0;
+    }
+
+    ul {
+        @include para;
+
+        li {
+            margin-bottom: $unit-xsmall;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+.style-footer {
+    @include make-col-ready();
+    @include make-col(12);
+    @include text-center;
+    margin-bottom: $unit-large;
+    margin-top: $unit-large;
+
+    @include media-breakpoint-up(md) {
+        margin-bottom: $unit-xlarge;
+        margin-top: $unit-xxlarge;
+    }
+
+    a {
+        display: inline-block;
+        width: 100px;
+
+        img {
+            width: 100%;
+        }
+    }
+}

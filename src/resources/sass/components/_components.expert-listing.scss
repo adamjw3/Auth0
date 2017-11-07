@@ -1,0 +1,59 @@
+// =============================================================================
+// Expert Listing
+// =============================================================================
+
+// Expert Listing
+// -----------------------------------------------------------------------------
+//
+// Purpose: A list of experts
+//
+//
+// 1.
+//
+// -----------------------------------------------------------------------------
+
+.c-expert-listing {
+    @include global-component-margins;
+}
+
+.c-expert-listing__item {
+    @include make-col-ready();
+    @include make-col(12);
+    margin-bottom: $unit-large;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+
+    @include media-breakpoint-up(md) {
+        @include make-col(4);
+        margin-bottom: $unit-xlarge;
+    }
+}
+
+.c-expert-listing__item-media-container {
+    @include make-col-ready();
+    @include make-col(12);
+    margin-bottom: $unit-small;
+
+    @include media-breakpoint-up(md) {
+        margin-bottom: $unit;
+    }
+}
+
+.c-expert-listing__item-media-link {
+    display: block;
+}
+
+.c-expert-listing__item-media {
+    width: 100%;
+}
+
+.c-expert-listing__item-content-container {
+    @include make-col-ready();
+    @include make-col(12);
+}
+
+.c-expert-listing__item-title {
+    margin-bottom: $unit-small;
+}

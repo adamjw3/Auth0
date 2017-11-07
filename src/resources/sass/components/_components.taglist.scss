@@ -1,0 +1,45 @@
+// =============================================================================
+// Tag List
+// =============================================================================
+
+// Tag List
+// -----------------------------------------------------------------------------
+//
+// Purpose: List of tags
+//
+//
+// 1. Remove margins on line-block elements
+//
+// -----------------------------------------------------------------------------
+
+.c-taglist {
+    @include global-component-margins;
+}
+
+.c-taglist__wrapper {
+    @include make-col-ready();
+    @include make-col(12);
+
+    @include media-breakpoint-up(md) {
+        @include make-col(10);
+        @include make-col-offset(1);
+    }
+
+    @include media-breakpoint-up(xl) {
+        @include make-col(8);
+        @include make-col-offset(2);
+    }
+}
+
+.c-taglist__list {
+    @include font-size(0); // 1
+}
+
+.c-taglist__item {
+    display: inline-block;
+    margin: $unit-xxsmall $unit-xsmall $unit-xxsmall 0;
+}
+
+.c-blog-article__link {
+
+}

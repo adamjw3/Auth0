@@ -1,0 +1,128 @@
+// =============================================================================
+// Social
+// =============================================================================
+
+// Social Share
+// -----------------------------------------------------------------------------
+//
+// Purpose: Facebook, Twitter, LinkedIn & Pinterest share links
+//
+//
+// 1. Right margin on all but the last item
+//
+// -----------------------------------------------------------------------------
+
+.c-socialshare {
+    @include global-component-margins;
+}
+
+.c-socialshare__wrapper {
+    @include make-col-ready();
+    @include make-col(12);
+}
+
+.c-socialshare__title {
+    display: inline-block;
+    margin-right: $unit;
+    vertical-align: middle;
+
+    @include media-breakpoint-up(md) {
+        margin-right: $unit-large;
+    }
+}
+
+.c-socialshare__items {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.c-socialshare__item {
+    float: left;
+
+    // 1
+    &:not(:last-of-type) {
+        margin-right: $unit;
+
+        @include media-breakpoint-up(md) {
+            margin-right: $unit-large;
+        }
+    }
+}
+
+.c-socialshare__link {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.c-socialshare__link-icon {
+    @include font-size(2.0);
+
+    @include media-breakpoint-up(sm) {
+        @include font-size(2.5);
+    }
+
+    @include media-breakpoint-up(md) {
+        @include font-size(3.0);
+    }
+
+    &.icon-facebook {
+        @include hocus{
+            color: $color-social-facebook;
+        }
+    }
+
+    &.icon-twitter {
+        @include hocus{
+            color: $color-social-twitter;
+        }
+    }
+
+    &.icon-linkedin {
+        @include hocus{
+            color: $color-social-linkedin;
+        }
+    }
+
+    &.icon-pinterest {
+        @include hocus{
+            color: $color-social-pinterest;
+        }
+    }
+}
+
+// Social Share Modifiers
+// -----------------------------------------------------------------------------
+//
+// Purpose: Enhances or removes styles from default social share
+//
+//
+// 1. Removes the margin from the top & bottom of the social share
+// 2. Center align everything
+//
+// -----------------------------------------------------------------------------
+
+// 1
+.c-socialshare--nomargin {
+    margin-bottom: 0;
+    margin-top: 0;
+
+    @include media-breakpoint-up(md) {
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+
+    @include media-breakpoint-up(lg) {
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+
+    @include media-breakpoint-up(xl) {
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+}
+
+// 2
+.c-socialshare--center {
+    @include text-center;
+}

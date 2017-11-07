@@ -1,0 +1,74 @@
+<section class="c-newsletter {{class}}">
+    <div class="container">
+        <div class="c-newsletter__wrapper">
+            <div class="row">
+                <div class="c-newsletter__content-container">
+                    <div class="row">
+                        <!--(bake-start _if="title")-->
+                        <div class="c-newsletter__title-container">
+                            <h2 class="c-newsletter__title heading">{{title}}</h2>
+                        </div>
+                        <!--(bake-end)-->
+                        <!--(bake-start _if="description")-->
+                        <div class="c-newsletter__summary-container cms-content">
+                            <p>{{description}}</p>
+                        </div>
+                        <!--(bake-end)-->
+                    </div>
+                </div>
+                <div class="c-newsletter__form c-form">
+                    <fieldset class="form">
+                        <legend class="c-form__legend">Newsletter signup</legend>
+                        <!--(bake-start _if="errormessage")-->
+                        <div class="row">
+                            <div class="c-newsletter__form-validation">
+                                <div class="c-form__validation c-form__validation--error">
+                                    <div class="c-newsletter__form-validation-content">
+                                        <p>Error message</p>
+                                        <ul>
+                                            <li>Error message list item</li>
+                                            <li>Error message list item</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--(bake-end)-->
+                        <!--(bake-start _if="successmessage")-->
+                        <div class="row">
+                            <div class="c-newsletter__form-validation">
+                                <div class="c-form__validation c-form__validation--success">
+                                    <div class="c-newsletter__form-validation-content">
+                                        <p>Success message</p>
+                                        <ul>
+                                            <li>Success message list item</li>
+                                            <li>Success message list item</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--(bake-end)-->
+                        <div class="row">
+                            <div class="c-newsletter__form-field">
+                                <div class="c-form__group">
+                                    <label for="name" class="c-form__label u-visually-hide">Name</label>
+                                    <input id="name" type="text" class="c-form__textbox" placeholder="Name" required />
+                                </div>
+                            </div>
+                            <div class="c-newsletter__form-field">
+                                <div class="c-form__group">
+                                    <label for="email" class="c-form__label u-visually-hide">Email</label>
+                                    <input id="email" type="email" class="c-form__textbox" placeholder="Email" required />
+                                </div>
+                            </div>
+                            <div class="c-newsletter__submit-field">
+                                <button type="submit" class="c-btn c-btn--light submit">Sign up</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

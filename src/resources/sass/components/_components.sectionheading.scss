@@ -1,0 +1,38 @@
+// =============================================================================
+// Section Heading
+// =============================================================================
+
+// Section Heading
+// -----------------------------------------------------------------------------
+//
+// Purpose: Title & summary to introduce section
+//
+//
+// 1.
+//
+// -----------------------------------------------------------------------------
+
+.c-sectionheading {
+    @include global-component-margins;
+    margin-bottom: 0;
+
+    @include media-breakpoint-up(md) {
+        margin-bottom: 0;
+    }
+}
+
+.c-sectionheading__wrapper {
+    @include make-col-ready();
+    @include make-col(12);
+    @include text-center;
+}
+
+.c-sectionheading__title {
+
+}
+
+.c-sectionheading__summary {
+    display: inline-block;
+    margin-top: $unit-small;
+    max-width: 500px;
+}

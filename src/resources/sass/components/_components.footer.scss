@@ -1,0 +1,57 @@
+// =============================================================================
+// Footer
+// =============================================================================
+
+// Global Footer
+// -----------------------------------------------------------------------------
+//
+// Purpose: Always sits at the bottom of each page
+//
+//
+// 1.
+//
+// -----------------------------------------------------------------------------
+
+.c-footer {
+    @include global-component-margins;
+}
+
+.c-footer__legal {
+    @include make-col-ready();
+    @include make-col(12);
+    @include text-center;
+
+    &::before {
+        background-color: $color-footer-legal-border;
+        content: "";
+        display: inline-block;
+        height: 1px;
+        margin-bottom: $unit;
+        width: 100%;
+    }
+}
+
+.c-footer__legal-items {
+    @include font-size(1.2);
+    display: inline-block;
+    line-height: 150%;
+}
+
+.c-footer__legal-item {
+    float: left;
+
+    &:not(:last-of-type) {
+        margin-right: $unit;
+    }
+}
+
+.c-footer__legal-link {
+    display: inline-block;
+    text-decoration: none;
+
+    html.no-touchevents & {
+        @include hocus {
+            text-decoration: underline;
+        }
+    }
+}

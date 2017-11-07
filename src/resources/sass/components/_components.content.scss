@@ -1,0 +1,65 @@
+// =============================================================================
+// Content
+// =============================================================================
+
+// Content
+// -----------------------------------------------------------------------------
+//
+// Purpose: Content
+//
+//
+// 1.
+//
+// -----------------------------------------------------------------------------
+
+.c-content {
+    @include global-component-margins;
+}
+
+.c-content__content-container {
+    @include make-col-ready();
+    @include make-col(12);
+
+    @include media-breakpoint-up(md) {
+        @include make-col(10);
+        @include make-col-offset(1);
+    }
+
+    @include media-breakpoint-up(xl) {
+        @include make-col(8);
+        @include make-col-offset(2);
+    }
+}
+
+.c-content__title-container {
+    @include make-col-ready();
+    @include make-col(12);
+}
+
+.c-content__summary-container {
+    @include make-col-ready();
+    @include make-col(12);
+    margin-top: $unit;
+}
+
+
+// Content Modifiers
+// -----------------------------------------------------------------------------
+//
+// Purpose: Enhances or removes styles from default content
+//
+//
+// 1. Removes the margin from the bottom of the content
+//
+// -----------------------------------------------------------------------------
+
+// 1
+.c-content--nomargin {
+    margin-bottom: 0;
+    margin-top: 0;
+
+    @include media-breakpoint-up(md) {
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+}

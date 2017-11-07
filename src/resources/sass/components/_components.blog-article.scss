@@ -1,0 +1,116 @@
+// =============================================================================
+// Blog Article
+// =============================================================================
+
+// Blog Article
+// -----------------------------------------------------------------------------
+//
+// Purpose: An individual blog article
+//
+//
+// 1. Add margin to the top of the meta item if it follows another one
+// 2. Add margin to the left of the meta item
+// 3. Cancels out the margin bottom and left added the items so it lines up with the content on the page
+// 4. Removes background of progress bar for FF & IE10+
+// 5. Removes default border of progress bar in FF/Opera
+// 6. Sets the color of the progress bar in IE10+
+// 7. Sets the progress bars background to transparent
+// 8. Sets the progress indicator in the bar to a color
+//
+// -----------------------------------------------------------------------------
+
+.c-blog-article {
+    @include global-component-margins;
+}
+
+.c-blog-article__progress-bar {
+    appearance: none;
+    background-color: transparent; // 4
+    border: none; // 5
+    color: $color-blog-article-progress-bar-bg; // 6
+    height: $unit-xxsmall;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: $z-index-5--article-progress-bar;
+
+    // 7
+    &::-webkit-progress-bar {
+        background-color: transparent;
+    }
+
+    // 8
+    &::-webkit-progress-value {
+        background-color: $color-blog-article-progress-bar-bg;
+    }
+}
+
+.c-blog-article__content {
+    width: 100%;
+}
+
+.c-blog-article__header-container {
+    @include make-col-ready();
+    @include make-col(12);
+    margin-bottom: $unit-small;
+
+    @include media-breakpoint-up(md) {
+        @include make-col(10);
+        @include make-col-offset(1);
+        margin-bottom: $unit-large;
+    }
+
+    @include media-breakpoint-up(xl) {
+        @include make-col(8);
+        @include make-col-offset(2);
+    }
+}
+
+.c-blog-article__content-container {
+    @include make-col-ready();
+    @include make-col(12);
+
+    @include media-breakpoint-up(md) {
+        @include make-col(10);
+        @include make-col-offset(1);
+    }
+
+    @include media-breakpoint-up(xl) {
+        @include make-col(8);
+        @include make-col-offset(2);
+    }
+}
+
+.c-blog-article__title {
+    margin-bottom: $unit-small;
+}
+
+.c-blog-article__meta {
+    @include media-breakpoint-up(sm) {
+        margin-bottom: -$unit-small;
+        margin-left: -$unit-small;
+    }
+}
+
+.c-blog-article__meta-item {
+    @include media-breakpoint-up(sm) {
+        // 2
+        display: inline-block;
+        margin-bottom: $unit-small;
+        margin-left: $unit-small;
+        margin-right: -0.25em;
+    }
+}
+
+.c-blog-article__meta-item + .c-blog-article__meta-item {
+    @include media-breakpoint-down(xs) {
+        // 1
+        margin-top: $unit-xsmall;
+    }
+}
+
+.c-blog-article__meta-value {
+    @include para;
+    display: block;
+}

@@ -1,0 +1,57 @@
+// =============================================================================
+// Event Article
+// =============================================================================
+
+// Event Article
+// -----------------------------------------------------------------------------
+//
+// Purpose: An individual event article
+//
+//
+// 1.
+//
+// -----------------------------------------------------------------------------
+
+.c-event-article {
+    @include global-component-margins;
+}
+
+.c-event-article__header-container {
+    @include make-col-ready();
+    @include make-col(12);
+    margin-bottom: $unit-small;
+
+    @include media-breakpoint-up(md) {
+        @include make-col(10);
+        @include make-col-offset(1);
+        margin-bottom: $unit-large;
+    }
+
+    @include media-breakpoint-up(xl) {
+        @include make-col(8);
+        @include make-col-offset(2);
+    }
+}
+
+.c-event-article__content-container {
+    @include make-col-ready();
+    @include make-col(12);
+
+    @include media-breakpoint-up(md) {
+        @include make-col(10);
+        @include make-col-offset(1);
+    }
+
+    @include media-breakpoint-up(xl) {
+        @include make-col(8);
+        @include make-col-offset(2);
+    }
+}
+
+.c-event-article__title {
+    margin-bottom: $unit-small;
+}
+
+.c-event-article__date {
+    @include para;
+}

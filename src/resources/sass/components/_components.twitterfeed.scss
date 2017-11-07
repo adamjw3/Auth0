@@ -1,0 +1,58 @@
+// =============================================================================
+// Twitter Feed
+// =============================================================================
+
+// Twitter Feed
+// -----------------------------------------------------------------------------
+//
+// Purpose: Display latest tweets from a specified account
+//
+//
+// 1. On small devices & below we need a top margin as each tweet is stacked
+//
+// -----------------------------------------------------------------------------
+
+.c-twitterfeed {
+    @include global-component-margins;
+}
+
+.c-twitterfeed__header {
+    @include make-col-ready();
+    @include make-col(12);
+    @include text-center;
+    margin-bottom: $unit-large;
+
+    @include media-breakpoint-up(md) {
+        margin-bottom: $unit-xlarge;
+    }
+}
+
+// 1
+.c-twitterfeed__tweet {
+    @include make-col-ready();
+    @include make-col(12);
+
+    @include media-breakpoint-up(md) {
+        @include make-col(4);
+    }
+
+    &:not(:first-of-type) {
+        @include media-breakpoint-down(sm) {
+            margin-top: $unit-large;
+        }
+    }
+}
+
+.c-twitterfeed__tweet-time {
+    @include para;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.c-twitterfeed__tweet-text {
+    margin-top: $unit-xsmall;
+
+    @include media-breakpoint-up(md) {
+        margin-top: $unit-small;
+    }
+}

@@ -1,0 +1,46 @@
+<div class="c-resource-download" itemscope itemtype="http://schema.org/DigitalDocument">
+    <div class="container">
+        <div class="row">
+            <div class="c-resource-download__content">
+                <div class="c-resource-download__header-container">
+                    <h1 class="c-resource-download__title heading-large" itemprop="name">Resource name would go here</h1>
+                    <ul class="c-resource-download__meta">
+                        <li class="c-resource-download__meta-item">
+                            <span class="c-resource-download__meta-value">10KB</span>
+                        </li>
+                        <li class="c-resource-download__meta-item">
+                            <span class="c-resource-download__meta-value" itemprop="fileFormat">PDF</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="c-resource-download__content-container cms-content" itemprop="description">
+                    <p>Mauris laoreet metus sit amet felis congue, id condimentum nulla placerat. Maecenas efficitur mollis tortor vitae convallis. Vestibulum quam arcu, vehicula eget eros at, venenatis aliquet felis. Aenean gravida, tellus non condimentum scelerisque, augue mauris hendrerit mauris, et consequat urna enim vitae libero. Vivamus vel rutrum sapien, faucibus iaculis enim. Curabitur consequat ac quam ut interdum.</p>
+                </div>
+
+                <!--(bake-start _if="!form")-->
+                <div class="c-resource-download__action-container">
+                    <a href="#" class="c-btn" itemprop="url">Download<i class="icon-download"></i></a>
+                </div>
+                <!--(bake-end)-->
+
+                <!--(bake-start _if="form")-->
+                <div class="c-resource-download__form-container c-form">
+                    <h2 class="heading-small">Please enter your email address to download this file.</h2>
+                    <fieldset class="form">
+                        <legend class="c-form__legend">Download title here</legend>
+                        <div class="c-resource-download__form-field">
+                            <!--(bake form-input.html id="email" label="Email" type="email" required="true")-->
+                        </div>
+                        <div class="c-resource-download__form-field">
+                            <div class="g-recaptcha" data-sitekey="6Le2TxwUAAAAAEZb8gEAl43Hwk_RzdKjnpuyBNlc"></div>
+                        </div>
+                        <div class="c-resource-download__form-field">
+                            <input type="submit" value="Submit" class="c-btn submit js-form-submit" />
+                        </div>
+                    </fieldset>
+                </div>
+                <!--(bake-end)-->
+            </div>
+        </div>
+    </div>
+</div>

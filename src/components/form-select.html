@@ -1,0 +1,14 @@
+<div class="c-form__select-field {{class}}">
+    <label for="{{id}}" class="c-form__label">{{label}}</label>
+    <div class="c-selectbox">
+        <!--(bake-start _if="required")-->
+        <select class="c-selectbox__select" id="{{id}}" required>
+        <!--(bake-end)-->
+        <!--(bake-start _if="!required")-->
+        <select class="c-selectbox__select" id="{{id}}">
+        <!--(bake-end)-->
+            <option value="">Please select</option>
+            <option value="">Option</option>
+        </select>
+    </div>
+</div>

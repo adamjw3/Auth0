@@ -1,0 +1,123 @@
+﻿// =============================================================================
+// Type Styles
+// =============================================================================
+
+// Web Fonts
+// -----------------------------------------------------------------------------
+//
+// Purpose: Web fonts used throughout the site
+//
+//
+// 1. Avenir Next Bold
+// 2. Avenir Next Light
+// 3. Icomoon
+//
+// -----------------------------------------------------------------------------
+
+// 1
+@font-face{
+    font-family:"Avenir Next LT W01 Bold";
+    src:url("/resources/fonts/dccb10af-07a2-404c-bfc7-7750e2716bc1.eot?#iefix");
+    src:url("/resources/fonts/dccb10af-07a2-404c-bfc7-7750e2716bc1.eot?#iefix") format("eot"),
+    url("/resources/fonts/b8e906a1-f5e8-4bf1-8e80-82c646ca4d5f.woff") format("woff"),
+    url("/resources/fonts/890bd988-5306-43ff-bd4b-922bc5ebdeb4.ttf") format("truetype"),
+    url("/resources/fonts/ed104d8c-7f39-4e8b-90a9-4076be06b857.svg#ed104d8c-7f39-4e8b-90a9-4076be06b857") format("svg");
+}
+
+@mixin font-avenir-next-bold() {
+    font-family: "Avenir Next LT W01 Bold", Arial;
+}
+
+// 2
+@font-face{
+	font-family:"Avenir Next W01 Light";
+	src:url("/resources/fonts/0ecef829-586e-426d-a633-4c8a8c926769.eot?#iefix");
+	src:url("/resources/fonts/0ecef829-586e-426d-a633-4c8a8c926769.eot?#iefix") format("eot"),
+	url("/resources/fonts/49c5f3e1-5867-4b1d-a843-2d07fa60d85d.woff2") format("woff2"),
+	url("/resources/fonts/f401df6f-54eb-406c-b46a-90b9451c598d.woff") format("woff"),
+	url("/resources/fonts/276fe25e-e430-4376-b33c-705dd77b3dba.ttf") format("truetype"),
+	url("/resources/fonts/869dc33b-3685-4d74-a51c-82b435579093.svg#869dc33b-3685-4d74-a51c-82b435579093") format("svg");
+}
+
+@mixin font-avenir-next-light() {
+	font-family: "Avenir Next W01 Light", Arial;
+}
+
+// 3
+@font-face {
+	font-family: 'icomoon';
+	src: url('/resources/fonts/icomoon.eot?cwi28p');
+	src: url('/resources/fonts/icomoon.eot?#iefixcwi28p') format('embedded-opentype'),
+	url('/resources/fonts/icomoon.woff?cwi28p') format('woff'),
+	url('/resources/fonts/icomoon.ttf?cwi28p') format('truetype'),
+	url('/resources/fonts/icomoon.svg?cwi28p#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+// Icon Fonts
+// -----------------------------------------------------------------------------
+//
+// Purpose: Using icomoon for all our icon font needs
+//
+//
+// 1.
+//
+// -----------------------------------------------------------------------------
+
+[class^="icon-"], [class*=" icon-"], .icomoon {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-download:before {
+	content: "\e907";
+}
+.icon-facebook:before {
+	content: "\ea91";
+}
+.icon-instagram:before {
+	content: "\ea92";
+}
+.icon-twitter:before {
+	content: "\ea97";
+}
+.icon-youtube:before {
+	content: "\ea9d";
+}
+.icon-linkedin:before {
+	content: "\eac9";
+}
+.icon-pinterest:before {
+	content: "\ead1";
+}
+.icon-burger:before {
+	content: "\e900";
+}
+.icon-close:before {
+	content: "\e901";
+}
+.icon-arrow-down:before {
+	content: "\e902";
+}
+.icon-arrow-left:before {
+	content: "\e903";
+}
+.icon-arrow-right:before {
+	content: "\e904";
+}
+.icon-arrow-up:before {
+	content: "\e905";
+}
+.icon-tick:before {
+	content: "\e906";
+}
+
+
